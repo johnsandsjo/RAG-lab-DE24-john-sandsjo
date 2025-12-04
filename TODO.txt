@@ -1,0 +1,15 @@
+1. Setting up repo and the development environment CHECK
+2. Converting PDFs to Text
+
+Strategy is to divide the transcripts into smaller chunks before vectorizing them. 
+Creating one vector per entire transcript is ineffective for modern RAG applications.
+
+Semantic Overload: we wnat a vector representation of meaning
+
+3. Ingesting Data into Vector Database CHECK
+4. Setting Up and Running the Vector Database CHECK
+5. Exploring the vector db - check the data CHECK
+6. Building data models for prompt and response CHECK
+7. Creating the RAG model - Agent CHECK
+8. Developing the API with FastAPI CHECK
+9. Building the Streamlit frontend CHECK
