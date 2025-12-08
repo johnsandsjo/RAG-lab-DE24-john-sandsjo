@@ -1,12 +1,7 @@
-from pathlib import Path
 from constants import DATA_PATH
-import pandas as pd
 import requests
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
-api_key = os.environ.get('YOUTUBE_API_KEY')
 
 def ingest_markdowns_to_df():
     data_records = []
@@ -20,12 +15,11 @@ def ingest_markdowns_to_df():
                 "content" : content
                 })
     
-    df = pd.DataFrame(data_records)
-    return df
+    return data_records
 
 def get_better_yt_data(): 
     api_key = os.environ.get('YOUTUBE_API_KEY')
-    api_key = api_key
+
     base_url = "https://www.googleapis.com/youtube/v3/playlistItems"
     upload_playlist_id = 'UUWP1PQqdZyWlBq1V1r71aRg'
 
@@ -49,7 +43,7 @@ def get_better_yt_data():
             snippet = item['snippet']
             video_id = snippet['resourceId']['videoId']
             all_videos.append({
-                    'video_title': snippet['title'].strip(),
+                    'video_title': snippet['title'].strip().casefold(),
                     'video_link': f"https://www.youtube.com/watch?v={video_id}"
                 })
 
@@ -58,8 +52,7 @@ def get_better_yt_data():
         if not next_page_token:
             break
 
-    df = pd.DataFrame(all_videos)
-    return df
+    return all_videos
 
 
 if __name__ == "__main__":

@@ -14,9 +14,7 @@ class Transcript(LanceModel):
     video_link: str
     content: str = embedding_model.SourceField()
     embedding: Vector(embedding_dimension) = embedding_model.VectorField()
-    #chunk_id : str
-    #timestamp_start: str
-
+    
 
 class Prompt(BaseModel):
     prompt : str = Field(description= "prompt from user. If empty, consider it missing")

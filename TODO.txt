@@ -13,3 +13,11 @@ Semantic Overload: we wnat a vector representation of meaning
 7. Creating the RAG model - Agent CHECK
 8. Developing the API with FastAPI CHECK
 9. Building the Streamlit frontend CHECK
+
+10. deploy the frontend to Azure Web App
+11. add memory to the rag (it's okay that the memory stays for a single session)
+12. you should have a history endpoint in the API to keep track of the history
+13. make it like a chatbot where all questions and answers can be viewed
+14. The Youtuber wants to have an endpoint to get youtube description, which is a summary of the video
+15. The Youtuber also wants to have an endpoint to get 20-40 keywords about a particular video which
+he can paste into Youtube as tags format of the tags are keyword1,keyword2,keyword3,...

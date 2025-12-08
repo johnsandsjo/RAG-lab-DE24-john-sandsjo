@@ -5,6 +5,18 @@ import lancedb
 
 vector_db = lancedb.connect(uri=VECTOR_DATABASE_PATH)
 
+def retrieve_top_documents(query: str):
+    """
+    Use vector search to find the closest matching Youtube video title to the query.
+    """
+    results = vector_db["transcriptions"].search(query=query).to_list()
+
+    return f"""
+        Video title: {results[0]["video_title"]},
+
+        Content: {results[0]["content"]}
+    """
+
 rag_agent = Agent(
     model= "google-gla:gemini-2.5-flash",
     retries=2, 
@@ -18,19 +30,5 @@ rag_agent = Agent(
         """
     ),
     output_type=RagResponse,
+    tools=retrieve_top_documents
 )
-
-
-@rag_agent.tool_plain
-def retrieve_top_documents(query: str):
-    """
-    Use vector search to find the closest matching Youtube video title to the query.
-    """
-    results = vector_db["transcriptions"].search(query=query).to_list()
-
-    return f"""
-        Video title: {results[0]["video_title"]},
-
-        Content: {results[0]["content"]}
-    """
-
