@@ -1,8 +1,9 @@
 #from pydantic import Field
 from lancedb.pydantic import LanceModel, Vector
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, constr
 from dotenv import load_dotenv
 from lancedb.embeddings import get_registry
+from typing import List
 
 load_dotenv()
 embedding_model = get_registry().get("gemini-text").create(name="gemini-embedding-001")
@@ -21,4 +22,9 @@ class Prompt(BaseModel):
 
 class RagResponse(BaseModel):
     video_title : str = Field(description = "Title of the transcribed Youtube video")
+    video_link : str = Field(description = "the direct url to the video on Youtube")
     answer : str = Field(description = "answer based on the video")
+
+class MetadataResponse(BaseModel):
+    description : str = Field(constr(max_length=150), description = "decscription of what the video contains")
+    keywords: List[str] = Field(description = "answer based on the video", default=None)

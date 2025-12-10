@@ -1,23 +1,31 @@
+CHECK Task 1 - build the RAG
 1. Setting up repo and the development environment CHECK
-2. Converting PDFs to Text
-
-Strategy is to divide the transcripts into smaller chunks before vectorizing them. 
-Creating one vector per entire transcript is ineffective for modern RAG applications.
-
-Semantic Overload: we wnat a vector representation of meaning
-
+2. Converting Markdowns to Text CHECK
 3. Ingesting Data into Vector Database CHECK
 4. Setting Up and Running the Vector Database CHECK
 5. Exploring the vector db - check the data CHECK
 6. Building data models for prompt and response CHECK
 7. Creating the RAG model - Agent CHECK
+CHECK Task 2 - serve the RAG
 8. Developing the API with FastAPI CHECK
 9. Building the Streamlit frontend CHECK
+CHECK Task 3 - serverless deployment of the API
+10. Deploy your API to Azure Function and connect the deployment to streamlit locally. 
+11. deploy the frontend to Azure Web App CHECK
+12. add memory to the rag (it's okay that the memory stays for a single session) CHECK
+13. make it like a chatbot where all questions and answers can be viewed CHECK
+14. you should have a history endpoint in the API to keep track of the history CHECK
+15. The Youtuber wants to have an endpoint to get youtube description, which is a summary of the video CHECK
+16. The Youtuber also wants to have an endpoint to get 20-40 keywords about a particular video which CHECK
 
-10. deploy the frontend to Azure Web App
-11. add memory to the rag (it's okay that the memory stays for a single session)
-12. you should have a history endpoint in the API to keep track of the history
-13. make it like a chatbot where all questions and answers can be viewed
-14. The Youtuber wants to have an endpoint to get youtube description, which is a summary of the video
-15. The Youtuber also wants to have an endpoint to get 20-40 keywords about a particular video which
-he can paste into Youtube as tags format of the tags are keyword1,keyword2,keyword3,...
+Bonus tasks, if more time
+17. multimodal inputs (image, audio)
+18. audio conversation with the RAG bot
+
+19. Test all endpoints
+
+UPDATE API KEY IN AZURE
+
+20. Task 5 Create a README CHECK
+21. Task 6 - video pitch for stakeholder presentation
+
