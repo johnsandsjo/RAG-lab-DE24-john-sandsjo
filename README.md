@@ -4,7 +4,7 @@
 ## How to get up and running
 To test the prototype, simply [go to this link](https://yt-rag-web-b3enfze3f5dccncw.swedencentral-01.azurewebsites.net/ "Link to protytpe"). It is a Streamlit app deployed as Azure Web App. The frontend code is conatinerized in Docker and deployed to Azure container instance. The app speaks to the a FastAPI api also deployed to Azure as a Function App.
 
-To test the endpoints, [go to this link](https://rag-youtube.azurewebsites.net/docs "Link to endpoints"). The different endpoints to try:
+To test the endpoints, got to the Jupyter notebook called demo_endpoint.ipynb. The different endpoints to try:
 - /rag/qyery - main endpint searching for a specifc subject and returns a video title, video link and agent answer.
 - /rag/history - 
 - /rag/description-gen - generate a video description on the closest matching video from the vector search
