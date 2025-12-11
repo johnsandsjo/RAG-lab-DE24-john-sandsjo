@@ -22,7 +22,7 @@ async def agent_with_history(prompt: Prompt):
     result= await CHAT_AGENT.run(user_prompt=user_prompt_string, message_history=GLOBAL_CHAT_HISTORY)
     GLOBAL_CHAT_HISTORY = result.all_messages()
     
-    return {"user_query": user_prompt_string, "bot_response": result.output, "history": GLOBAL_CHAT_HISTORY}
+    return {"user_query": user_prompt_string, "bot_response": result.output}
 
 
 @app.get("/rag/history")

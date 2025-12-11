@@ -18,7 +18,7 @@ Overview of the projects different pars:
 
 ### Vector DB
 The vector database in Lance DB has the following columns; video_title, video_link, content and embedding.
-The vector is created based on the the entire transcription (content). Ideally it should have been split up in smaller chunks for more specific semantic meaning. However this is scoped out of project and despite this semantic overlaod, the search performs well for the protytpe. 
+The vector is created based on the the entire transcription (content). 
 
 ### Youtueb API
 The *video links* are retrieved from using the Youtube API, see screenshot below. The upload_playlist_id is a specific Youtbe playlist all channels have with all their uploaded videos. This si retrieved from another endpoint, see explorations. ![Retriving better Youtube channel data](/assets/images/yt_data.jpg "function for Youtube API")
