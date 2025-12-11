@@ -14,13 +14,13 @@ CHECK Task 3 - serverless deployment of the API
 11. deploy the frontend to Azure Web App CHECK
 12. add memory to the rag (it's okay that the memory stays for a single session) CHECK
 13. make it like a chatbot where all questions and answers can be viewed CHECK
-14. you should have a history endpoint in the API to keep track of the history 
+14. you should have a history endpoint in the API to keep track of the history CHECK
 15. The Youtuber wants to have an endpoint to get youtube description, which is a summary of the video CHECK
 16. The Youtuber also wants to have an endpoint to get 20-40 keywords about a particular video which CHECK
 
 Bonus tasks, if more time
-17. multimodal inputs (image, audio)
-18. audio conversation with the RAG bot
+17. ~multimodal inputs (image, audio)~
+18. ~audio conversation with the RAG bot~
 
 19. Test all endpoints
 

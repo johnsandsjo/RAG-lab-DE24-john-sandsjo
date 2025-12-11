@@ -22,32 +22,24 @@ async def agent_with_history(prompt: Prompt):
     result= await CHAT_AGENT.run(user_prompt=user_prompt_string, message_history=GLOBAL_CHAT_HISTORY)
     GLOBAL_CHAT_HISTORY = result.all_messages()
     
-    return {"user_query": user_prompt_string, "bot_response": result.output}
+    return {"user_query": user_prompt_string, "bot_response": result.output, "history": GLOBAL_CHAT_HISTORY}
 
 
 @app.get("/rag/history")
 async def history_endpoint():
-    global GLOBAL_CHAT_HISTORY
-    #Make the history more digestable
+    
+    #Make the history digestable
     readable_history = []
-    for turn in GLOBAL_CHAT_HISTORY:
-        readable_history.append(turn["parts"])
-        for part in turn:
-            if "content" in part.content and "part_kind" in part.content:
-                part_kind = part["part_kind"]
-                content = part["content"]
-                if part_kind == "user-prompt":
-                    role = "User"
-                elif part_kind == 'tool-return':
-                    continue
-                elif part_kind == "assistant-response":
-                    role = "Bot"
-                else:
-                    continue
+    for message in GLOBAL_CHAT_HISTORY:
+        for part in message.parts:
+            # Check if the object has an attribute named "content" and "part_kind"
+            part_kind = getattr(part, 'part_kind', 'unknown')
+            if hasattr(part, 'content'):
+                content = part.content
                 readable_history.append({
-                        "role": role,
-                        "content": content
-                        })
+                "part_kind" : part_kind,
+                "content" : content
+                })
     return readable_history
 
 
