@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from rag_agent import initialize_agent, initialize_metadata_agent
 from data_models import Prompt
-import json
 
 app = FastAPI()
 

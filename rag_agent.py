@@ -13,9 +13,9 @@ def retrieve_matching_video(query: str):
     results = vector_db["transcriptions"].search(query=query).to_list()
 
     return f"""
-        Video title: {results[0]["video_title"]},
-        Content: {results[0]["content"]},
-        Content: {results[0]["video_link"]},
+        video title: {results[0]["video_title"]},
+        content: {results[0]["content"]},
+        video_link: {results[0]["video_link"]},
     """
 
 def initialize_agent():

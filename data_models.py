@@ -16,7 +16,7 @@ class Transcript(LanceModel):
     content: str = embedding_model.SourceField()
     embedding: Vector(embedding_dimension) = embedding_model.VectorField()
     
-
+    
 class Prompt(BaseModel):
     prompt : str = Field(description= "prompt from user. If empty, consider it missing")
 

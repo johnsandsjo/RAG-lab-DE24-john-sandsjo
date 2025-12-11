@@ -41,8 +41,8 @@ def layout():
         st.session_state.messages.append({"role": "assistant", "content": data["bot_response"]["answer"]})
 
 if __name__ == "__main__":
-    #layout()
-    print(url)
+    layout()
+    #print(url)
 
 
 # docker buildx build \

@@ -45,7 +45,7 @@ def add_data_to_vector_db(table):
             ) 
         print(table.to_pandas().shape)
         print(table.to_pandas())
-        time.sleep(30)
+        #time.sleep(30)
 
 
 if __name__ == "__main__":
